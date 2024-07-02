@@ -1,0 +1,42 @@
+{
+    "name": "Link Reveal",
+    "description": "Reveal Anchor Tag URLs",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "tabs"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "all_frames": false
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/url-16.png",
+            "32": "images/url-32.png",
+            "48": "images/url-48.png",
+            "128": "images/url-128.png",
+            "512": "images/url-512.png"
+        }
+    },
+    "icons": {
+        "16": "images/url-16.png",
+        "32": "images/url-32.png",
+        "48": "images/url-48.png",
+        "128": "images/url-128.png",
+        "512": "images/url-512.png"
+    }
+}
