@@ -8,9 +8,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     const schemeRegex = /^([a-z][a-z0-9+\-.]*):/;
     const anchors = document.getElementsByTagName("a");
    
-    // look for onclick; document.getElementsByTagName("a")[2].attributes.getNamedItem("onclick") == "onclick"
-    // look for JS in href: document.getElementsByTagName("a")[3].attributes.href && document.getElementsByTagName("a")[3].attributes.href.value == "javascript:doSomething"
-
     const links = new Array(anchors.length);
     for (let i = 0; i < links.length; i++) {
       console.log("i: ",i)

@@ -19,21 +19,26 @@ h1 {
 }
 .grid {
   display: grid;
-  grid-template-columns: 25px 75px 100px 310px 300px 35px 35px 35px 35px 35px 35px ;
+  grid-template-columns: 25px 75px 100px 310px 300px 35px 35px 35px 35px 35px 35px;
   gap: 1px;
 }
 
 .info-button-red {
   background-color: red;
+  color: white;
 }
-.info-button-green{
+.info-button-green {
   background-color: green;
+  color: white;
+  font-size: small;
+  padding: 2px;
+  font-family: "Courier New", Courier, monospace;
 }
 .info-button {
   border: none;
   height: 20px;
   width: 20px;
-  border-radius:5px;
+  border-radius: 5px;
 }
 
 .unencrypted-url {
@@ -41,11 +46,11 @@ h1 {
   color: black;
 }
 .link-contains-javascript {
-  background-color:  #FDFD96;
+  background-color: #fdfd96;
 }
 
 .attention {
-  background-color: #F33221;
+  background-color: #f33221;
   color: white;
 }
 
@@ -59,16 +64,23 @@ h1 {
   height: 500px;
 }
 
-/* https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
-.href, .anchor-el {
+.href,
+.anchor-el {
   overflow-wrap: break-word;
   word-wrap: break-word;
-
   -ms-word-break: break-all;
-  /* Instead use this non-standard one: */
   word-break: break-word;
 }
 
-table.fixed { table-layout:fixed;padding:3px; margin: 5px auto;}
-table.fixed td { overflow: hidden; min-width:40px;}
-.edge {border: 1px solid black; }
+table.fixed {
+  table-layout: fixed;
+  padding: 3px;
+  margin: 5px auto;
+}
+table.fixed td {
+  overflow: hidden;
+  min-width: 40px;
+}
+.edge {
+  border: 1px solid black;
+}

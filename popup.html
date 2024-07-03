@@ -10,23 +10,22 @@
 </head>
 
 <body>
-    <!-- <div class="theGrid" id="tbl"></div> -->
     <h1>Current Web Page Link Analysis</h1>
 
     <div>
         <table class="fixed">
-           <caption>Scroll to view red/green status</caption>
+            <caption><b>Scroll</b> to view red/green status</caption>
             <tr>
                 <td><b>Green status:</b></td>
-                <td><b>1:</b> +href</td>
-                <td><b>2:</b> -href:javascript</td>
-                <td><b>3:</b> -onclick</td>
-                <td><b>4:</b> +href=url</td>
-                <td><b>5:</b> +encrypted</td>
-                <td><b>6:</b> +text</td>
+                <td><b>1:</b> <span class="info-button-green">href</span></td>
+                <td><b>2:</b> <span class="info-button-green">no href:javascript</span></td>
+                <td><b>3:</b> <span class="info-button-green">no onclick</span></td>
+                <td><b>4:</b> <span class="info-button-green">href=url</span></td>
+                <td><b>5:</b> <span class="info-button-green">encrypted</span></td>
+                <td><b>6:</b> <span class="info-button-green">text</span></td>
             </tr>
         </table>
-       
+
     </div>
     <div class="container" id="links">
         <div class="grid header row">
@@ -41,7 +40,7 @@
             <div class="data">4</div>
             <div class="data">5</div>
             <div class="data">6</div>
-            
+
         </div>
         <script src="popup.js"></script>
 </body>

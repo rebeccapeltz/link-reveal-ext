@@ -14,62 +14,41 @@ const createInfoButton = (flag) => {
   }
   return button;
 };
-const addData = (i, row, data) => {
+const addInfoButton = (data,row) => {
+  col = document.createElement("div");
+  col.append(createInfoButton(data));
+  row.append(col);
+};
+const addTextContent = (data,row) =>{
   let col = document.createElement("div");
-  col.textContent = i;
+  col.textContent = data;
   row.append(col);
+}
+const addData = (i, row, data) => {
+  addTextContent(i,row);
+  addTextContent(data.scheme,row);
+  addTextContent(data.text,row);
+
+  // add anchor element string
   col = document.createElement("div");
-  col.textContent = data.scheme;
-  row.append(col);
-  col = document.createElement("div");
-  col.textContent = data.text;
+  col.classList.add("anchor-el");
+  col.textContent = data.anchorElString;
   row.append(col);
 
-   //anchor element string
-   col = document.createElement("div");
-   col.classList.add("anchor-el");
-   col.textContent = data.anchorElString;
-   row.append(col);
-
-  // href/URL
+  // add href/URL
   col = document.createElement("div");
   col.textContent = data.href;
   row.append(col);
   row.classList.add("href");
 
-  //info button 1 hasHref
-  col = document.createElement("div");
-  col.append(createInfoButton(data.hasHref));
-  row.append(col);
-
-  //info button 2 !href:javascript
-  col = document.createElement("div");
-  col.append(createInfoButton(data.hasNoJavascriptInHref));
-  row.append(col);
-
-  //info button 3 !onclick
-  col = document.createElement("div");
-  col.append(createInfoButton(data.hasHref));
-  row.append(col);
-
-  //info button 4 hasHrefUrl
-  col = document.createElement("div");
-  col.append(createInfoButton(data.hasHrefUrl));
-  row.append(col);
-
-  //info button 5 isEncrypted
-  col = document.createElement("div");
-  col.append(createInfoButton(data.isEncrypted));
-  row.append(col);
-
-  //info button 6 hasText
-  col = document.createElement("div");
-  col.append(createInfoButton(data.hasText));
-  row.append(col);
-
+  // add info buttons
+  addInfoButton(data.hasHref,row);
+  addInfoButton(data.hasNoJavascriptInHref,row);
+  addInfoButton(data.hasHref,row);
+  addInfoButton(data.hasHrefUrl,row);
+  addInfoButton(data.isEncrypted,row);
+  addInfoButton(data.hasText,row);
  
-
-
 };
 const appendRow = (i, data) => {
   const linkTable = document.querySelector("#links");
@@ -90,14 +69,14 @@ const setDOMInfo = (info) => {
 };
 
 window.addEventListener("DOMContentLoaded", () => {
-  // ...query for the active tab...
+  // query for the active tab...
   chrome.tabs.query(
     {
       active: true,
       currentWindow: true,
     },
     (tabs) => {
-      // ...and send a request to content for the DOM info...
+      // send a request to content for the DOM info
       chrome.tabs.sendMessage(
         tabs[0].id,
         { from: "popup", subject: "DOMInfo" },
