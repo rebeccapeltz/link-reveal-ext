@@ -18,14 +18,21 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       console.log("anchors[i].attributes.href.value: ",anchors[i].attributes.href ? anchors[i].attributes.href.value : "no href")
       let javascriptInHref = (anchors[i].attributes.href && anchors[i].attributes.href.value.indexOf("javascript") > -1) ? true : false;
       console.log("anchors[i].attributes.getNamedItem(onclick): ", anchors[i].attributes.getNamedItem("onclick"))
-      let useOnClick = anchors[i].attributes.getNamedItem("onclick") != null;
+      let hasOnClick = anchors[i].attributes.getNamedItem("onclick") != null;
       let schemeMatch = anchors[i].href.match(schemeRegex);
+      let schemeValue =  schemeMatch ? schemeMatch[1]: "";
+      let hrefValue = anchors[i].href;
+      let textValue = anchors[i].text;
       links[i] = {
-        href: anchors[i].href,
-        text: anchors[i].text,
-        scheme: schemeMatch ? schemeMatch[1]: "",
-        javascriptHref: javascriptInHref,
-        useOnclick: useOnClick
+        href: hrefValue,
+        text: textValue,
+        scheme: schemeValue,
+        hasHref: hrefValue ? true : false,
+        hasNoJavascriptInHref: !javascriptInHref,
+        hasNoOnclick: !hasOnClick,
+        hasHrefUrl: hrefValue ? true : false,
+        isEncrypted: (schemeValue && schemeValue.indexOf("https") > -1) ? true : false,
+        hasText: textValue ? true : false
       };
     }
     console.log(links);
