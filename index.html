@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Link Reveal Ext Test Page</title>
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <h1>Link Reveal Ext Test Page</h1>
+    <div><a href="https://www.example.com" target="_blank">Example</a></div>
+
+    <div><a href="https://www.example.com" target="_blank" onclick="alert('hello'); return false;">Say Hello</a></div>
+
+    <div><a href="https://www.example.com" onClick="alert('found me')" target="_blank">onClick me</a></div>
+
+    <div><a href="javascript:doSomething()">Javascript me</a></div>
+
+    <div><a onClick="alert('found me')" target="_blank">onclick me</a></div>
+
+    <div><a href="http://info.cern.ch/" target="_blank"
+            onclick="alert('my href is unencrypted but chrome will make it secure - try http://info.cern.ch/ on MS Edge')"; return true;>Unencrypted!!</a></div>
+         
+
+    <div><a href="http://www.example.com" target="_blank">example</a></div>
+    <div><a href="http://www.example.com" target="_blank">example</a></div>
+    <div><a href="http://www.example.com" target="_blank">example</a></div>
+
+
+    <div id="hanger1"></div>
+    <div id="hanger2"></div>
+    <script src="./script.js"></script>
+    <script>
+        function doSomething() {
+            alert("doing something now")
+        }
+
+        document.addEventListener("DOMContentLoaded", e => {
+
+            const hanger1 = document.querySelector("#hanger1");
+            const hanger2 = document.querySelector("#hanger2");
+
+            let aTag1 = document.createElement('a');
+            aTag1.setAttribute('href', "yourlink.htm");
+            aTag1.innerText = "link text 1";
+            hanger1.appendChild(aTag1);
+
+            let aTag2 = document.createElement('a');
+            aTag2.setAttribute('href', "yourlink.htm");
+            aTag2.innerText = "link text 2";
+            hanger2.appendChild(aTag2);
+
+        })
+
+    </script>
+</body>
+
+</html>

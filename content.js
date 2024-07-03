@@ -32,7 +32,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         hasNoOnclick: !hasOnClick,
         hasHrefUrl: hrefValue ? true : false,
         isEncrypted: (schemeValue && schemeValue.indexOf("https") > -1) ? true : false,
-        hasText: textValue ? true : false
+        hasText: textValue ? true : false,
+        anchorElString: anchors[i].outerHTML
       };
     }
     console.log(links);

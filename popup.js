@@ -24,6 +24,14 @@ const addData = (i, row, data) => {
   col = document.createElement("div");
   col.textContent = data.text;
   row.append(col);
+
+   //anchor element string
+   col = document.createElement("div");
+   col.classList.add("anchor-el");
+   col.textContent = data.anchorElString;
+   row.append(col);
+
+  // href/URL
   col = document.createElement("div");
   col.textContent = data.href;
   row.append(col);
@@ -59,37 +67,16 @@ const addData = (i, row, data) => {
   col.append(createInfoButton(data.hasText));
   row.append(col);
 
+ 
+
+
 };
 const appendRow = (i, data) => {
-  //console.log("append row: ", data);
   const linkTable = document.querySelector("#links");
   let row = document.createElement("div");
   row.classList.add("row");
-
-  // if (
-  //   isUnencrypted(data.scheme) &&
-  //   containsJavaScript(data.javascriptHref, data.useOnclick)
-  // ) {
-  //   row.classList.add("attention");
-  // } else if (isUnencrypted(data.scheme)) {
-  //   row.classList.add("unencrypted-url");
-  // } else if (containsJavaScript(data.javascriptHref, data.useOnclick)) {
-  //   row.classList.add("link-contains-javascript");
-  // }
-  // add unencrypted-url if not encrypted
-
-  // if (data.scheme.toLowerCase() == "http"){
-  //   row.classList.add("unencrypted-url");
-  // }
-  // // add warning if href points to javascript or there is an onclick in the url
-  // if (data.javascriptHref || data.useOnclick){
-  //   row.classList.add("link-contains-javascript")
-  // }
-
-  //console.log(data.url);
   row.classList.add("grid");
   linkTable.append(row);
-
   addData(i, row, data);
 };
 
@@ -100,7 +87,6 @@ const setDOMInfo = (info) => {
     //console.log(info[i].href, info[i].text, info[i].scheme);
     appendRow(i, info[i]);
   }
-  //document.querySelector('#anchor-data').textContent = JSON.stringify(info)
 };
 
 window.addEventListener("DOMContentLoaded", () => {
