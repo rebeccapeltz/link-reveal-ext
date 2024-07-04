@@ -34,6 +34,9 @@ The right most portion provides a look at the "info buttons".  A red button indi
 
  ![Right most portion of the link analysis window](./images/link-info-right.png)
 
+## Credit
+
+Icon: <a href="https://iconscout.com/icons/fish-hook" class="text-underline font-size-sm" target="_blank">fish hook</a> by <a href="https://iconscout.com/contributors/meiliastudio" class="text-underline font-size-sm" target="_blank">Meiliastudio</a>
 
 
 
