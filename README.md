@@ -4,7 +4,7 @@ The purpose of this chrome extension is to make it easy to see the underlying lo
 
 # Using the Extension
 
-After installing the chrome extension, you will see an icon that has a "URL" in it.
+After installing the chrome extension, you will see an icon that has a red fish on a hook in it.
 
 ![Extension with URL icon](./url-32.png)
 
@@ -33,6 +33,8 @@ The right most portion provides a look at the "info buttons".  A red button indi
  The red buttons are not intended to cause alarm, but instead, point to a second look before you click.  
 
  ![Right most portion of the link analysis window](./images/link-info-right.png)
+
+
 
 
 
