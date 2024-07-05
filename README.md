@@ -12,16 +12,26 @@ Open a web page for which you want to reveal link information.  You can use the 
 
 Once the web page is loaded, click on the extension icon in the upper right of the Chrome browser.
 
-![Locate and click on the URL extension from the test page](./images/image-of-url-ext-on-test-page.png)
+![Locate and click on the URL extension from the test page](./images/icon.jpg)
 
 # Interpreting the Results
 
 Clicking on the extension icon generates a popup window with information about the links on the web page.  You should see a web page that is scrollable in both directions. 
 The left most portion provides information about the scheme and text, along with a look at the full rendered anchor tag and the URL that is referenced by the `href` attribute if one exists.
 
-![Left most portion of the link analysis window](./images/link-info-left.png)
+![Left most portion of the link analysis window](./images/left.jpg)
 
-The right most portion provides a look at the "info buttons".  A red button indicates an attribute or attribute value that could be a security issue, although often it is not.  The red is used when one of the following states are found:
+The right most portion provides a look at the "info buttons".  
+
+ ![Right most portion of the link analysis window](./images/right.jpg)
+
+ These buttons are color red and green to provide a quick look at possible security problems.  When there is a possibility that JavaScript is called instead of navigation to a URL value in the href attribute or the URL starts with `http` instead of `https`, implying that the site that the user would navigate to is unencrypted, the button is colored red.
+
+ The numbers in the header captions map to the numbers in the table columns.
+
+ ![Mapping captions to columns](./images/attribute-analysis.jpg)
+
+A red button indicates an attribute or attribute value that could be a security issue, although often it is not.  The red is used when one of the following states are found:
  
  - no `href` attribute: This could be due to the anchor element serving as a button or an onclick used to process a click.  When there is no `href`, there is usually JavaScript that processes the click and this could introduce a security issue.
  - `href:javascript`: When an `href` uses JavaScript it will be calling a function that is has access to instead of navigating to a web page.  This is not usually a security problem, but depending on the JavaScript it could be. 
@@ -32,7 +42,7 @@ The right most portion provides a look at the "info buttons".  A red button indi
 
  The red buttons are not intended to cause alarm, but instead, point to a second look before you click.  
 
- ![Right most portion of the link analysis window](./images/link-info-right.png)
+
 
 ## Credit
 
