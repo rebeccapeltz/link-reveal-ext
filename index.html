@@ -7,13 +7,27 @@
     <title>Link Reveal Ext Test Page</title>
     <link href="./style.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="./images/fish-hook.png">
+    <style>
+        .footer {
+            margin: 5px 0;
+            position: fixed;
+            left: 0;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        .footer a{
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Link Reveal Ext Test Page</h1>
     <div><a href="https://www.example.com" target="_blank">Example</a></div>
 
-    <div><a href="https://www.example.com" target="_blank" onclick="alert('hello'); return false;">Say Hello</a></div>
+    <div><a href="https://www.example.com" target="_blank" onclick="alert('hello'); return false;">Say Hello</a>
+    </div>
 
     <div><a href="https://www.example.com" onClick="alert('found me')" target="_blank">onClick me</a></div>
 
@@ -22,8 +36,9 @@
     <div><a onClick="alert('found me')" target="_blank">onclick me</a></div>
 
     <div><a href="http://info.cern.ch/" target="_blank"
-            onclick="alert('my href is unencrypted but chrome will make it secure - try http://info.cern.ch/ on MS Edge')"; return true;>Unencrypted!!</a></div>
-         
+            onclick="alert('my href is unencrypted but chrome will make it secure - try http://info.cern.ch/ on MS Edge')"
+            ; return true;>Unencrypted!!</a></div>
+
 
     <div><a href="http://www.example.com" target="_blank">example</a></div>
     <div><a href="http://www.example.com" target="_blank">example</a></div>
@@ -32,6 +47,21 @@
 
     <div id="hanger1"></div>
     <div id="hanger2"></div>
+
+    <div class="footer">
+        <div><img src="./images/no-fishing-allowed_440_280.jpg" width="100px" alt="no phishing allowed"> </div>
+        <div>
+            <a href="https://github.com/rebeccapeltz/link-reveal-ext" target="_blank">
+                Code for extension: https://github.com/rebeccapeltz/link-reveal-ext
+            </a>
+        </div>
+        <div>
+            <a href="https://github.com/rebeccapeltz/link-reveal-ext/blob/main/index.html" target="_blank">
+                Code for this test page: https://www.beckypeltz.me/link-reveal-ext/
+            </a>
+        </div>
+    </div>
+
     <script src="./script.js"></script>
     <script>
         function doSomething() {
