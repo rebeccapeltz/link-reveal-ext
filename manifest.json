@@ -1,20 +1,16 @@
 {
     "name": "Link Reveal",
     "description": "Reveal Anchor Tag URLs",
-    "version": "1.0",
+    "version": "1.0.1",
     "manifest_version": 3,
     "permissions": [
-        "tabs"
-    ],
-    "host_permissions": [
-        "<all_urls>"
+        "activeTab"
     ],
     "content_scripts": [
-        {
+    {
             "matches": [
                 "<all_urls>"
-            ],
-            "js": [
+            ],            "js": [
                 "content.js"
             ],
             "all_frames": false
