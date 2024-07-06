@@ -61,9 +61,7 @@ const appendRow = (i, data) => {
 
 // Update the relevant fields with the new data.
 const setDOMInfo = (info) => {
-  console.log("info: ", info);
   for (let i = 0; i < info.length; i++) {
-    //console.log(info[i].href, info[i].text, info[i].scheme);
     appendRow(i, info[i]);
   }
 };
