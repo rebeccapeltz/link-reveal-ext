@@ -68,12 +68,12 @@ h1 {
 .container {
   width: 1110px;
   height: 500px;
-  position:absolute;
-    top: 130px;
-    left:0px;
-    right:0px;
-    bottom:0px;
-    overflow-y:scroll; 
+  position: absolute;
+  top: 130px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  overflow-y: scroll;
 }
 
 .href,
@@ -93,6 +93,10 @@ table.fixed td {
   overflow: hidden;
   min-width: 40px;
 }
-.edge {
-  border: 1px solid black;
+
+.nodata {
+  color: blue;
+}
+.hide {
+  display: none;
 }

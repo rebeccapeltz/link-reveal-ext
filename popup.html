@@ -12,7 +12,11 @@
 <body>
     <div class="autoscroll">
         <h1>Current Web Page Link Analysis</h1>
-        <table class="fixed">
+        <div id="nodata-msg" class=" hide">
+            <h2 class="nodata">There are no anchor tags on this page.</h2>
+            <p>Try a page refresh in case the page was put to sleep. </p>
+        </div>
+        <table id="status-def" class="fixed">
             <caption><b>Scroll</b> to view red/green status</caption>
             <tr>
                 <td><b>Green status:</b></td>
@@ -25,7 +29,7 @@
             </tr>
         </table>
     </div>
-    <div class="container" id="links">
+    <div id="links" class="container">
         <div class="grid header row">
             <div class="data">Id </div>
             <div class="data">Scheme </div>
@@ -38,9 +42,9 @@
             <div class="data">4</div>
             <div class="data">5</div>
             <div class="data">6</div>
-
         </div>
-        <script src="popup.js"></script>
+    </div>
+    <script src="popup.js"></script>
 </body>
 
 </html>

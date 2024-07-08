@@ -61,9 +61,17 @@ const appendRow = (i, data) => {
 
 // Update the relevant fields with the new data.
 const setDOMInfo = (info) => {
-  for (let i = 0; i < info.length; i++) {
-    appendRow(i, info[i]);
+  if (info){
+    for (let i = 0; i < info.length; i++) {
+      appendRow(i, info[i]);
+    }
+  } else {
+    //no anchors elements on the page
+    document.querySelector("#nodata-msg").classList.remove("hide");
+    document.querySelector("#status-def").classList.add("hide");
+    document.querySelector("#links").classList.add("hide");
   }
+ 
 };
 
 window.addEventListener("DOMContentLoaded", () => {
