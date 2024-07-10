@@ -59,3 +59,36 @@ Icon: <a href="https://iconscout.com/icons/fish-hook" class="text-underline font
 
 
 
+## Data Flow
+
+
+```mermaid
+sequenceDiagram
+    autonumber
+    popup.html->>popup.js: DOM Content Loaded
+
+    popup.js->>content.js: get DOM info from web page
+    Note over popup.js,content.js: popup.js sends reference to function setDOMInfo
+    content.js->>popup.js: return array of links with attribute data
+    Note over popup.js,content.js: return data as an argument in setDOMInfo
+    loop Process DOM Info 
+        popup.js-->popup.js: Process DOM data from user page
+    end
+    popup.js->>popup.html: Build Report  
+```  
+
+
+## Statistics on Number of Phishing attacks
+
+credit: https://www.thesslstore.com/blog/phishing-statistics/
+
+
+```mermaid
+xychart-beta
+    title "Phishing Attacks Per Year"
+    x-axis [2020, 2021, 2022, 2023]
+    y-axis "# Phishing Attacks" 6000000 --> 15000000
+    bar [6942158, 8726021, 10513657, 13438810]
+    line [6942158, 8726021, 10513657, 13438810]
+```
+
