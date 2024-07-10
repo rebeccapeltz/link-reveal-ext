@@ -36,17 +36,9 @@
     <div><a onClick="alert('found me')" target="_blank">onclick me</a></div>
 
     <div><a href="http://info.cern.ch/" target="_blank"
-            onclick="alert('my href is unencrypted but chrome will make it secure - try http://info.cern.ch/ on MS Edge')"
-            ; return true;>Unencrypted!!</a></div>
+            onclick="alert('my href is unencrypted but chrome will make it secure - try http://info.cern.ch/ a browser without https applied'); return true;">Unencrypted!!</a>
+    </div>
 
-
-    <div><a href="http://www.example.com" target="_blank">example</a></div>
-    <div><a href="http://www.example.com" target="_blank">example</a></div>
-    <div><a href="http://www.example.com" target="_blank">example</a></div>
-
-
-    <div id="hanger1"></div>
-    <div id="hanger2"></div>
 
     <div class="footer">
         <div><img src="./images/no-fishing-allowed_440_280.jpg" width="100px" alt="no phishing allowed"> </div>
@@ -66,24 +58,6 @@
         function doSomething() {
             alert("doing something now")
         }
-
-        document.addEventListener("DOMContentLoaded", e => {
-
-            const hanger1 = document.querySelector("#hanger1");
-            const hanger2 = document.querySelector("#hanger2");
-
-            let aTag1 = document.createElement('a');
-            aTag1.setAttribute('href', "yourlink.htm");
-            aTag1.innerText = "link text 1";
-            hanger1.appendChild(aTag1);
-
-            let aTag2 = document.createElement('a');
-            aTag2.setAttribute('href', "yourlink.htm");
-            aTag2.innerText = "link text 2";
-            hanger2.appendChild(aTag2);
-
-        })
-
     </script>
 </body>
 
